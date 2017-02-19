@@ -1,0 +1,58 @@
+brew info docker-machine
+ 2179  https_proxy=127.0.0.1:7777 brew install docker-machine
+ 2180  brew install docker-machine
+ 2181  docker-machine
+ 2182  docker-machine create default
+ 2183  docker-machine create default --driver virtualbox
+ 2184  `eval docker-machine env`
+ 2185  docker-machine env
+ 2186  eval docker-machine env
+ 2187  eval `docker-machine env`
+ 2188  docker s
+ 2189  docker ps
+ 2190  brew install docker
+ 2191  docker ps
+ 2192  ps
+ 2193  docker ps
+ 2194  docker-machine ip
+ 2195  docker run -it --rm mysql
+ 2196  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 mysql
+ 2197  mkd ~/data/mysql1
+ 2198  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD:/var/lib/mysql --name mysql -p 3306:3306 mysql
+ 2199  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql --name mysql -p 3306:3306 mysql
+ 2200  ll
+ 2201  docker-machine ssh
+ 2202  rm abc
+ 2203  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql --name mysql -p 3306:3306 mysql
+ 2204  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql --privilidged --name mysql -p 3306:3306 mysql
+ 2205  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql --priviledged --name mysql -p 3306:3306 mysql
+ 2206  docker run --help | grep pri
+ 2207  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql --privileged --name mysql -p 3306:3306 mysql
+ 2208  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql:rw --privileged --name mysql -p 3306:3306 mysql
+ 2209  ll
+ 2210  id
+ 2211  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql:rw --privileged --name mysql -p 3306:3306 mysql
+ 2212  sudo docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql:rw --privileged --name mysql -p 3306:3306 mysql
+ 2213  docker run -it --rm -e MYSQL_ROOT_PASSWORD=root -v $PWD/:/var/lib/mysql:rw --privileged --name mysql -p 3306:3306 mysql
+ 2214  ..
+ 2215  docker run -d -e MYSQL_ROOT_PASSWORD=root --name mysql -p 3306:3306 mysql
+ 2216  docker logs -f 8c4261a43ebb152bfed777c223e9e57bd949ea2aec591541eeaebb6b1e08392d
+ 2217  docker logs -f mysql
+ 2218  cd mysql1/
+ 2219  docker run -it --rm -v /Users/mac/data/mysql1/data/:/var/lib/mysql/ -e MYSQL_ROOT_PASSWORD=root --name mysql -p 3306:3306 mysql
+ 2220  docker-machine stop
+ 2221  docker-machine start
+ 2222  docker run -it --rm wener/base
+ 2223  eval `docker-machine env`
+ 2224  docker ps
+ 2225  docker run -it --rm wener/base sh
+ 2226  docker tag xm/xxx wener/base
+ 2227  docker tag  wener/base xm/xxx
+ 2228  docker run -it --rm xm/xxx sh
+ 2229  historyy
+ 2230  history
+ 2231  docker run -d -e MYSQL_ROOT_PASSWORD=root --name mysql -p 3306:3306 mysql
+ 2232  docker ps e62c053dafa6ff0d90496e17a81513054380906f7f641e7e921100a188bbc67a
+ 2233  docker ps
+ 2234  docker-machine ip
+ 2235  history
