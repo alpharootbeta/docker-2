@@ -1,0 +1,18 @@
+
+ mysql -h 192.168.99.100 -uroot -proot
+ 
+ show variables like '%slow%';
+ show variables like '%long%';
+ show variables like '%out%';
+ 
+ set global slow_query_log = on;
+ 
+ exit;
+ 
+ set global slow_query_log = on;
+ 
+ set global long_query_time = xxx;
+ 
+ set global log_output = 'FILE,TABLE';
+ 
+ select * from mysql.slow_log;
