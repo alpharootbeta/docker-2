@@ -55,4 +55,5 @@ brew info docker-machine
  2232  docker ps e62c053dafa6ff0d90496e17a81513054380906f7f641e7e921100a188bbc67a
  2233  docker ps
  2234  docker-machine ip
- 2235  history
+ 2235  history 
+ 2236  update
