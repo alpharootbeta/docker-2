@@ -75,3 +75,4 @@ show variables like 'log_output';
 SET GLOBAL log_output = 'FILE,TABLE';
 select * from mysql.slow_log limit 2 \G
 ```
+
