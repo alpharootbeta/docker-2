@@ -1,0 +1,77 @@
+1.brew代理安装docker-machine
+#https_proxy=127.0.0.1:7777 brew install docker-machine
+
+2.使用docker-machine创建virtualbox
+#docker-machine create default --driver virtualbox
+
+3.创建docker-machine环境配置
+#eval `docker-machine env`
+
+4.brew代理安装docker
+#brew install docker
+
+5.查看docker进程
+#docker ps
+
+6.查看docker-machine ip
+#docker-machine ip
+
+7.docker运行mysql服务
+#docker run -it --rm -e MYSQL_ROOT_PASSWORD=root --name mysql -p 3306:3306 mysql
+
+-i 交互形式
+-t 申请 tty
+--rm 在运行容器结束后删除之间文件
+-e 是环境变量 MYSQL_ROOT_PASSWORD=root
+-p 是暴露端口, 将容器中的端口映射到虚拟机中,访问时通过虚拟机的 ip 来访问
+mysql 为拉取的镜像名
+
+-it --rm 一般主要用于测试
+-d 为在后台运行,大多用于生产或者实际服务运行
+
+每个运行的容器都有一个 id, 也有一个名字,如果不手动指定名字则会使用自动生成的名字
+
+# 进入容器环境执行命令, 每个容器环境其实也相当于一个虚拟机
+docker exec -it 28d2bcb73274 bash
+停止容器,如果有 --rm 就会把容器产生的数据删除,如果不删除,那么下次再之下 docker start 28d2bcb73274 可以保留上次的数据
+docker stop 28d2bcb73274
+
+mysql 的数据实际是存储于镜像中的 /var/lib/mysql 位置
+
+
+实际镜像为 https://hub.docker.com/_/mysql/
+
+官方镜像的路径为 _/mysql
+
+
+docker cp mysql:/var/lib/mysql data
+
+个人的镜像为为 wener/base
+
+https://hub.docker.com/r/wener/base/
+docker run -it --rm wener/base sh
+
+
+## slow log
+* [Write logs into tables](https://mariadb.com/kb/en/mariadb/writing-logs-into-tables/)
+* [TABLE mysql.slow_log](https://mariadb.com/kb/en/mariadb/mysqlslow_log-table/)
+* [Slow Query Log Overview](https://mariadb.com/kb/en/mariadb/slow-query-log-overview/)
+```sql
+show variables like '%slow%';
+-- slow_query_log 是否开启
+-- slow_query_log_file 日志文件
+select global slow_query_log;
+-- 注意: 修改全局变量后需要退出重新登录
+set global slow_query_log=1;
+
+-- 查看满日志的记录时间 long_query_time, 单位为 s
+show variables like '%long%';
+-- 修改时间以便于测试
+set global long_query_time=3;
+
+-- 查看数据库日志的输出位置
+show variables like 'log_output';
+-- 如果同时输出到文件和表,则可以通过 mysql.slow_log 查看慢日志
+SET GLOBAL log_output = 'FILE,TABLE';
+select * from mysql.slow_log limit 2 \G
+```
